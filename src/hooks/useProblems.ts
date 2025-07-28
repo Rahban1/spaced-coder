@@ -1,6 +1,19 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
-import { supabase, Problem } from '@/lib/supabase'
+import { supabase } from '@/integrations/supabase/client'
 import { useToast } from '@/hooks/use-toast'
+
+export type Problem = {
+  id: string
+  user_id: string
+  topic: string
+  problem_name: string
+  problem_link: string
+  last_review_date: string
+  next_review_date: string
+  correct_streak: number
+  interval: number
+  created_at: string
+}
 import { getInitialReviewSchedule, calculateNextReview, isReviewDue } from '@/lib/spacedRepetition'
 import { format } from 'date-fns'
 

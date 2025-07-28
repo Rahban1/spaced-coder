@@ -14,7 +14,48 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      problems: {
+        Row: {
+          correct_streak: number
+          created_at: string
+          id: string
+          interval: number
+          last_review_date: string
+          next_review_date: string
+          problem_link: string
+          problem_name: string
+          topic: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          correct_streak?: number
+          created_at?: string
+          id?: string
+          interval?: number
+          last_review_date?: string
+          next_review_date?: string
+          problem_link: string
+          problem_name: string
+          topic: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          correct_streak?: number
+          created_at?: string
+          id?: string
+          interval?: number
+          last_review_date?: string
+          next_review_date?: string
+          problem_link?: string
+          problem_name?: string
+          topic?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
